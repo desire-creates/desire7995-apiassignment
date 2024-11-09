@@ -109,3 +109,4 @@
 /home/desire/Documents/NOTES/300 LEVEL SECOND SEMESTER/COM313/desire7995-apiassignment/apiassignment/obj/Debug/net8.0/apiassignment.pdb
 /home/desire/Documents/NOTES/300 LEVEL SECOND SEMESTER/COM313/desire7995-apiassignment/apiassignment/obj/Debug/net8.0/apiassignment.genruntimeconfig.cache
 /home/desire/Documents/NOTES/300 LEVEL SECOND SEMESTER/COM313/desire7995-apiassignment/apiassignment/obj/Debug/net8.0/ref/apiassignment.dll
+/home/desire/Documents/NOTES/300 LEVEL SECOND SEMESTER/COM313/desire7995-apiassignment/apiassignment/obj/Debug/net8.0/apiassignment.sourcelink.json
