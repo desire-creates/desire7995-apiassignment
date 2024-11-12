@@ -6,7 +6,7 @@ namespace apiassignment.Models{
         public string Password {get; set;} = string.Empty;
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 
-        public virtual ICollection<order> Orders { get; set; } = new List<order>();
+        public virtual ICollection<order> Orders { get; set;} = new List<order>();
 
     }
 }

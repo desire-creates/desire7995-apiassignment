@@ -111,13 +111,13 @@ namespace apiassignment.Controllers
         [HttpGet]
         public async Task<ActionResult> GetAllProduct()
         {
-            return Ok(await _context.Products.ToArrayAsync());  // Corrected to Products
+            return Ok(await _context.Products.ToArrayAsync());
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult> GetProduct(int id)
         {
-            var product = await _context.Products.FindAsync(id);  // Corrected to Products
+            var product = await _context.Products.FindAsync(id);
             if (product == null)
             {
                 return NotFound();
@@ -126,24 +126,24 @@ namespace apiassignment.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<product>> PostProduct(product product)  // Corrected variable name
+        public async Task<ActionResult<product>> PostProduct(product product)
         {
             if (product == null)
             {
-                return BadRequest("Product cannot be null");  // Changed message to reflect the entity
+                return BadRequest("Product cannot be null");
             }
 
-            _context.Products.Add(product);  // Corrected to Products
+            _context.Products.Add(product);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction(
-                "GetProduct",  // Corrected action name
+                "GetProduct",
                 new { id = product.productID },
                 product);
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult> PutProduct(int id, product product)  // Corrected to Product
+        public async Task<ActionResult> PutProduct(int id, product product)
         {
             if (id != product.productID)
             {
@@ -158,7 +158,7 @@ namespace apiassignment.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!_context.Products.Any(p => p.productID == id))  // Corrected to Products
+                if (!_context.Products.Any(p => p.productID == id))
                 {
                     return NotFound();
                 } 
@@ -172,15 +172,15 @@ namespace apiassignment.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult<product>> DeleteProduct(int id)  // Corrected variable name
+        public async Task<ActionResult<product>> DeleteProduct(int id)
         {
-            var product = await _context.Products.FindAsync(id);  // Corrected to Products
+            var product = await _context.Products.FindAsync(id);
             if (product == null)
             {
                 return NotFound();
             }
 
-            _context.Products.Remove(product);  // Corrected to Products
+            _context.Products.Remove(product);
             await _context.SaveChangesAsync();
 
             return product;
@@ -202,13 +202,13 @@ namespace apiassignment.Controllers
         [HttpGet]
         public async Task<ActionResult> GetAllUser()
         {
-            return Ok(await _context.Users.ToArrayAsync());  // Corrected to Users
+            return Ok(await _context.Users.ToArrayAsync());
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult> GetUser(int id)  // Corrected method name
+        public async Task<ActionResult> GetUser(int id)
         {
-            var user = await _context.Users.FindAsync(id);  // Corrected to Users
+            var user = await _context.Users.FindAsync(id);
             if (user == null)
             {
                 return NotFound();
@@ -217,24 +217,24 @@ namespace apiassignment.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<user>> PostUser(user user)  // Corrected to User
+        public async Task<ActionResult<user>> PostUser(user user)
         {
             if (user == null)
             {
-                return BadRequest("User cannot be null");  // Changed message to reflect the entity
+                return BadRequest("User cannot be null");
             }
 
-            _context.Users.Add(user);  // Corrected to Users
+            _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction(
-                "GetUser",  // Corrected action name
+                "GetUser",
                 new { id = user.userID },
                 user);
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult> PutUser(int id, user user)  // Corrected to User
+        public async Task<ActionResult> PutUser(int id, user user)
         {
             if (id != user.userID)
             {
@@ -249,7 +249,7 @@ namespace apiassignment.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!_context.Users.Any(u => u.userID == id))  // Corrected to Users
+                if (!_context.Users.Any(u => u.userID == id))
                 {
                     return NotFound();
                 } 
@@ -263,15 +263,15 @@ namespace apiassignment.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult<user>> DeleteUser(int id)  // Corrected variable name
+        public async Task<ActionResult<user>> DeleteUser(int id)
         {
-            var user = await _context.Users.FindAsync(id);  // Corrected to Users
+            var user = await _context.Users.FindAsync(id);
             if (user == null)
             {
                 return NotFound();
             }
 
-            _context.Users.Remove(user);  // Corrected to Users
+            _context.Users.Remove(user);
             await _context.SaveChangesAsync();
 
             return user;
