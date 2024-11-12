@@ -12,7 +12,7 @@ namespace apiassignment.Controllers
     {
         private readonly shopcontext _context;
 
-        public OrderController(shopcontext context, ILogger<OrderController> logger)
+        public OrderController(shopcontext context)
         {
             _context = context;
             _context.Database.EnsureCreated();
@@ -102,7 +102,7 @@ namespace apiassignment.Controllers
     {
         private readonly shopcontext _context;
 
-        public ProductController(shopcontext context, ILogger<ProductController> logger)
+        public ProductController(shopcontext context)
         {
             _context = context;
             _context.Database.EnsureCreated();
@@ -193,7 +193,7 @@ namespace apiassignment.Controllers
     {
         private readonly shopcontext _context;
 
-        public UserController(shopcontext context, ILogger<UserController> logger)
+        public UserController(shopcontext context)
         {
             _context = context;
             _context.Database.EnsureCreated();
