@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace apiassignment.Models{
     public class user{
         public int userID{get;set;}
@@ -6,6 +8,7 @@ namespace apiassignment.Models{
         public string Password {get; set;} = string.Empty;
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 
+        [JsonIgnore]
         public virtual ICollection<order> Orders { get; set;} = new List<order>();
 
     }

@@ -12,7 +12,7 @@ using apiassignment.Models;
 namespace apiassignment.Migrations
 {
     [DbContext(typeof(shopcontext))]
-    [Migration("20241109204425_InitialCreate")]
+    [Migration("20241118090111_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
